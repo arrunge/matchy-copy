@@ -71,15 +71,17 @@ function add(animals, animal) {
     if ((animal["name"].length > 0) && (animal["species"].length > 0)) {
         //iterate through array to determine names dont match
         var index = 0;
-    // while (index < animals.length) {
-    //     //determine if string matches a name in array
-    //     if (animals[index]["name"].toLowerCase() !== animal["name"].toLowerCase()) {
-    //          index++;
-    //     } else if (index === animals.length){
-    //         //if string does not match increase index to check next name
+        while (index < animals.length) {
+         //determine if string matches a name in array
+         if (animals[index]["name"].toLowerCase() !== animal["name"].toLowerCase()) {
+              index++;
+         } else if (animals[index]["name"].toLowerCase() === animal["name"].toLowerCase()){
+            index = animals.length + 2; 
+         } if (index === animals.length){
+             //if string does not match increase index to check next name
             animals.push(animal);
-    //     }
-    // }
+         }
+     }
     }
 }
 
